@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Philippe Sampont">
+    <link rel="stylesheet" href="style/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compteur</title>
+  </head>
+  <body>
+    <main>
+      <h2>Compteur</h2>
+      <div id="counter">0</div>
+      <button name="inc" onclick="inc()">+</button> <button name="dec" onclick="dec()">-</button>
+      <h2>Orientation</h2>
+      <ul>
+        <li>α = <span id="alpha">n/c</span></li>
+        <li>β = <span id="beta">n/c</span></li>
+        <li>γ = <span id="gamma">n/c</span></li>
+      </ul>
+      <div id="status">n/c</div>
+      <h2>Acceleration</h2>
+      <ul>
+        <li>x = <span id="ax">n/c</span></li>
+        <li>y = <span id="ay">n/c</span></li>
+        <li>z = <span id="az">n/c</span></li>
+      </ul>
+      <button name="orientation" onclick="getSpacial()">=</button>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
