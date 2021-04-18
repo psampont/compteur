@@ -20,7 +20,7 @@ function manageOrientation(event) {
   document.getElementById('beta').innerHTML=Math.round(event.beta);
   document.getElementById('gamma').innerHTML=Math.round(event.gamma);
   
-  if (event.gamma<=-80 || event.gamma>=80}'") {
+  if (event.gamma<=-80 || event.gamma>=80) {
     document.getElementById('orientation_status').innerHTML = "ON";
   }
   else {
