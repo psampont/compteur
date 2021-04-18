@@ -25,12 +25,11 @@ function manageOrientation(event) {
     inc();
   }
   else if (event.alpha==0 && event.beta==0 && event.gamma==-90) {
-    document.getElementById('status').innerHTML = "DOWN";
+    document.getElementById('orientation_status').innerHTML = "DOWN";
     dec();
   }
-
   else {
-    document.getElementById('status').innerHTML = "NO";
+    document.getElementById('orientation_status').innerHTML = "NO";
   }
 }
 
@@ -38,6 +37,18 @@ function manageMotion(event) {
   document.getElementById('ax').innerHTML=Math.round(event.accelerationIncludingGravity.x);
   document.getElementById('ay').innerHTML=Math.round(event.accelerationIncludingGravity.y);
   document.getElementById('az').innerHTML=Math.round(event.accelerationIncludingGravity.z);
+  
+  if (event.accelerationIncludingGravity.y >= 8) {
+    document.getElementById('acceration_status').innerHTML = "UP";
+    inc();
+  }
+  else if (event.accelerationIncludingGravity <= 1) {
+    document.getElementById('acceration_status').innerHTML = "DOWN";
+    dec();
+  }
+  else {
+    document.getElementById('acceration_status').innerHTML = "NO";
+  }
 }
 
 window.addEventListener("deviceorientation", manageOrientation, true);
