@@ -38,18 +38,24 @@ function manageMotion(event) {
   document.getElementById('ay').innerHTML=Math.round(event.accelerationIncludingGravity.y);
   document.getElementById('az').innerHTML=Math.round(event.accelerationIncludingGravity.z);
   
-  if (event.accelerationIncludingGravity.y >= 8) {
-    document.getElementById('acceration_status').innerHTML = "UP";
-    inc();
-  }
-  else if (event.accelerationIncludingGravity.y <= 1) {
-    document.getElementById('acceration_status').innerHTML = "DOWN";
-    dec();
+  if (event.accelerationIncludingGravity.x >= 8) {
+    if (event.accelerationIncludingGravity.y >= 8) {
+      document.getElementById('acceration_status').innerHTML = "UP";
+      inc();
+    }
+    else if (event.accelerationIncludingGravity.x >= 8 && event.accelerationIncludingGravity.y < 2) {
+      document.getElementById('acceration_status').innerHTML = "DOWN";
+      dec();
+    }
+    else {
+      document.getElementById('acceration_status').innerHTML = "ON";
+    }
   }
   else {
-    document.getElementById('acceration_status').innerHTML = "NO";
+    document.getElementById('acceration_status').innerHTML = "OFF";
   }
 }
+
 
 window.addEventListener("deviceorientation", manageOrientation, true);
 window.addEventListener("devicemotion", manageMotion, true);
