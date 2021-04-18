@@ -35,11 +35,11 @@ function manageMotion(event) {
   
   if (event.accelerationIncludingGravity.y >= 8) {
     document.getElementById('acceration_status').innerHTML = "UP";
-    if (document.getElementById('orientation_status').innerHTML = "ON") inc();
+    if (document.getElementById('orientation_status').innerHTML == "ON") inc();
   }
   else if (event.accelerationIncludingGravity.x >= 8 && event.accelerationIncludingGravity.y < 2) {
     document.getElementById('acceration_status').innerHTML = "DOWN";
-    if (document.getElementById('orientation_status').innerHTML = "ON") dec();
+    if (document.getElementById('orientation_status').innerHTML == "ON") dec();
   }
   else {
     document.getElementById('acceration_status').innerHTML = "NO";
