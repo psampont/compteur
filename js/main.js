@@ -42,7 +42,7 @@ function manageMotion(event) {
     document.getElementById('acceration_status').innerHTML = "UP";
     inc();
   }
-  else if (event.accelerationIncludingGravity <= 1) {
+  else if (event.accelerationIncludingGravity.y <= 1) {
     document.getElementById('acceration_status').innerHTML = "DOWN";
     dec();
   }
